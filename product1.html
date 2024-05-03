@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Website Petshop </title>
+
+  <link href="img/favicon.ico" rel="icon">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wight@700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    #popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 9999; /* Ensure it's on top of other elements */
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0 mb-5">
+    <a href="main.html" class="navbar-brand ms-lg-5">
+      <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>Pet Shop</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto py-0">
+        <a href="#" class="nav-item nav-link">
+          <i class="bi bi-cart4 fs-3 text-primary me-3"></i>
+        </a>
+        <a href="product.html" class="nav-item nav-link">Continue Shopping</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <img class="img-fluid mb-4" src="img/product-1.png" alt="Pedigree DentaStix">
+            <h6 class="text-uppercase">Pedigree DentaStix</h6>
+            <h5 class="text-primary mb-0">Php 159.00</h5>
+            <button type="button" class="btn btn-primary buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="btn btn-maroon py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+  <div id="popup">
+    <p>You have purchased the item.</p>
+    <button type="button" class="btn btn-primary">Close</button>
+  </div>
+
+  <script>
+    document.querySelector('.buy-now').addEventListener('click', function(e) {
+      // Show pop-up message
+      document.getElementById('popup').style.display = 'block';
+
+      // Close button functionality
+      const closeButton = document.querySelector('#popup button');
+      closeButton.addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'none';
+      });
+
+      // Redirect to product.html after a short delay
+      setTimeout(function() {
+        window.location.href = 'product.html';
+      }, 2000); // Adjust the delay as needed (in milliseconds)
+    });
+  </script>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
